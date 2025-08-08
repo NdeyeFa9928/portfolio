@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Aperçu Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+                    Portfolio
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition-colors">Compétences</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition-colors">Projets</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-4xl md:text-6xl font-bold">
+                        Bonjour, je suis <span class="text-yellow-300">Votre Nom</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl font-light">
+                        Développeur Full Stack passionné
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Découvrir mon travail
+                        </button>
+                        <button class="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                            Télécharger CV
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-80 h-80 mx-auto bg-white/20 rounded-full flex items-center justify-center text-6xl font-bold float">
+                        👨‍💻
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Preview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Architecture du Portfolio</h2>
+                <p class="text-xl text-gray-600">Structure moderne et clean avec Next.js 14 + TypeScript + Tailwind CSS</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Architecture -->
+                <div class="bg-blue-50 p-8 rounded-2xl">
+                    <div class="text-3xl mb-4">⚛️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Frontend</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Next.js 14 (App Router)</li>
+                        <li>• TypeScript</li>
+                        <li>• Tailwind CSS</li>
+                        <li>• Framer Motion</li>
+                        <li>• Responsive Design</li>
+                    </ul>
+                </div>
+
+                <!-- Components Structure -->
+                <div class="bg-green-50 p-8 rounded-2xl">
+                    <div class="text-3xl mb-4">🧩</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Composants</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Header/Footer</li>
+                        <li>• Hero Section</li>
+                        <li>• About Section</li>
+                        <li>• Skills Section</li>
+                        <li>• Projects Section</li>
+                        <li>• Contact Section</li>
+                    </ul>
+                </div>
+
+                <!-- Features -->
+                <div class="bg-purple-50 p-8 rounded-2xl">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Fonctionnalités</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Animations fluides</li>
+                        <li>• Mode sombre</li>
+                        <li>• SEO optimisé</li>
+                        <li>• Performance</li>
+                        <li>• Mobile-first</li>
+                    </ul>
+                </div>
+
+                <!-- Development -->
+                <div class="bg-yellow-50 p-8 rounded-2xl">
+                    <div class="text-3xl mb-4">🛠️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Développement</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• ESLint + Prettier</li>
+                        <li>• TypeScript strict</li>
+                        <li>• Git conventions</li>
+                        <li>• Clean Architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Deployment -->
+                <div class="bg-red-50 p-8 rounded-2xl">
+                    <div class="text-3xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Déploiement</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Vercel Ready</li>
+                        <li>• CI/CD Pipeline</li>
+                        <li>• Domain Custom</li>
+                        <li>• HTTPS/SSL</li>
+                    </ul>
+                </div>
+
+                <!-- Performance -->
+                <div class="bg-indigo-50 p-8 rounded-2xl">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Performance</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Image Optimization</li>
+                        <li>• Code Splitting</li>
+                        <li>• Lazy Loading</li>
+                        <li>• Bundle Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Prochaines Étapes</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">1. Personnalisation</h3>
+                    <p class="text-gray-300">Ajoutez vos informations personnelles, photos, vidéos et projets dans les fichiers de données.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">2. Contenu</h3>
+                    <p class="text-gray-300">Remplissez les sections avec votre CV, vos compétences et votre expérience professionnelle.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">3. Déploiement</h3>
+                    <p class="text-gray-300">Déployez sur Vercel avec votre domaine personnalisé pour un portfolio professionnel.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">4. Optimisation</h3>
+                    <p class="text-gray-300">Ajustez les couleurs, animations et contenu selon vos préférences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2024 Portfolio. Architecture Next.js moderne prête à l'emploi.</p>
+        </div>
+    </footer>
+</body>
+</html>
