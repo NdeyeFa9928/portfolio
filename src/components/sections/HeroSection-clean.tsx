@@ -10,7 +10,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {[...Array(5)].map((_, i) => (
@@ -49,13 +49,13 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="space-y-2 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow-sm"
+              className="space-y-2"
             >
               <p className="text-lg text-blue-600 font-medium">Bonjour, je suis</p>
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900">
-                Fatou
+                {personalInfo.name}
               </h1>
-              <h2 className="text-3xl lg:text-4xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-gray-700">
                 {personalInfo.title}
               </h2>
               <p className="text-lg text-gray-600 max-w-lg">
@@ -73,13 +73,31 @@ export default function HeroSection() {
               {personalInfo.bio}
             </motion.p>
 
-            {/* Spacing element to replace contact info */}
+            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="h-4"
+              className="space-y-3"
             >
+              <div className="flex items-center space-x-3 text-gray-600">
+                <span className="text-blue-600">📍</span>
+                <span>{personalInfo.location}</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-600">
+                <span className="text-blue-600">📞</span>
+                <span>{personalInfo.phone}</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-600">
+                <span className="text-blue-600">📧</span>
+                <a href={`mailto:${personalInfo.email}`} className="hover:text-blue-600 transition-colors">
+                  {personalInfo.email}
+                </a>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-600">
+                <span className="text-blue-600">🌍</span>
+                <span>{personalInfo.mobility}</span>
+              </div>
             </motion.div>
 
             {/* Action Buttons */}
@@ -93,17 +111,17 @@ export default function HeroSection() {
                 href={personalInfo.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
               >
                 <span className="mr-2">📥</span>
                 Télécharger mon CV
               </a>
               <button
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg"
+                onClick={scrollToAbout}
+                className="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-colors"
               >
-                <span className="mr-2">🚀</span>
-                Voir mes projets
+                En savoir plus
+                <span className="ml-2">⬇️</span>
               </button>
             </motion.div>
 
@@ -145,30 +163,19 @@ export default function HeroSection() {
             className="relative"
           >
             <div className="relative w-80 h-80 mx-auto lg:w-96 lg:h-96">
-              {/* Background decoration - enhanced with more vibrant gradients */}
-              <motion.div 
-                animate={{ rotate: [6, 8, 6] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full"
-              ></motion.div>
-              <motion.div 
-                animate={{ rotate: [-6, -8, -6] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"
-              ></motion.div>
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full transform rotate-6"></div>
+              <div className="absolute inset-2 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full transform -rotate-6"></div>
               
-              {/* Photo with enhanced glow effect */}
+              {/* Photo */}
               <div className="relative w-full h-full bg-white rounded-full p-2 shadow-2xl">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 rounded-full opacity-75 blur-sm"></div>
-                <div className="relative w-full h-full bg-white rounded-full p-1">
-                  <Image
-                    src={personalInfo.avatarUrl}
-                    alt={personalInfo.name}
-                    fill
-                    className="rounded-full object-cover"
-                    priority
-                  />
-                </div>
+                <Image
+                  src={personalInfo.avatarUrl}
+                  alt={personalInfo.name}
+                  fill
+                  className="rounded-full object-cover"
+                  priority
+                />
               </div>
               
               {/* Floating elements */}
