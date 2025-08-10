@@ -7,23 +7,23 @@ import Footer from '@/components/layout/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Portfolio - Votre Nom',
-  description: 'Portfolio professionnel showcasing mes compétences et expériences',
-  keywords: ['portfolio', 'développeur', 'web', 'react', 'nextjs'],
-  authors: [{ name: 'Votre Nom' }],
-  creator: 'Votre Nom',
+  title: 'Portfolio - Ndeye Fa | Ingénieure Logicielle Fullstack',
+  description: 'Ingénieure logicielle fullstack avec +2 ans d\'expérience. Spécialisée en Python, Java, JavaScript. Passionnée par l\'innovation et le développement de solutions performantes.',
+  keywords: ['portfolio', 'ingénieure logicielle', 'fullstack', 'python', 'java', 'javascript', 'développement web', 'ndeye fa'],
+  authors: [{ name: 'Ndeye Fa' }],
+  creator: 'Ndeye Fa',
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://votre-portfolio.vercel.app',
-    title: 'Portfolio - Votre Nom',
-    description: 'Portfolio professionnel showcasing mes compétences et expériences',
-    siteName: 'Portfolio',
+    url: 'https://ndeye-fa-portfolio.vercel.app',
+    title: 'Portfolio - Ndeye Fa | Ingénieure Logicielle Fullstack',
+    description: 'Ingénieure logicielle fullstack avec +2 ans d\'expérience. Spécialisée en Python, Java, JavaScript.',
+    siteName: 'Portfolio Ndeye Fa',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio - Votre Nom',
-    description: 'Portfolio professionnel showcasing mes compétences et expériences',
+    title: 'Portfolio - Ndeye Fa | Ingénieure Logicielle Fullstack',
+    description: 'Ingénieure logicielle fullstack avec +2 ans d\'expérience. Spécialisée en Python, Java, JavaScript.',
   },
 }
 

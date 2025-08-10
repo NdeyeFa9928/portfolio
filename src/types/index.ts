@@ -51,12 +51,15 @@ export interface PersonalInfo {
   name: string
   title: string
   bio: string
+  shortBio: string
   avatar: string
   resume: string
+  resumeUrl: string
   location: string
   age: number
   education: string
   experience: string
+  email: string
 }
 
 export interface NavItem {
