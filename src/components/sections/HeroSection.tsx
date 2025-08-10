@@ -87,7 +87,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-4 sm:justify-start justify-center"
             >
               <a
                 href={personalInfo.resumeUrl}

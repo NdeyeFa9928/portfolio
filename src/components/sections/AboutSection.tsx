@@ -115,7 +115,7 @@ export default function AboutSection() {
               <div className="relative bg-white p-4 rounded-xl shadow-lg">
                 <div className="aspect-[4/5] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/images/IMG_3631.TIF"
+                    src="/images/1000053141.JPEG"
                     alt="Fatou - Ingénieure Logicielle"
                     fill
                     className="object-cover"
