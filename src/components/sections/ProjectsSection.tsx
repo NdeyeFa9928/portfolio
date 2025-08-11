@@ -78,7 +78,7 @@ const projects = [
     description:
       "Outil de vision par ordinateur permettant la détection automatique de médicaments dans un pilulier hospitalier.",
     images: [
-      '/images_project/DataChecker.png' // Utilisation temporaire, à remplacer par une image spécifique
+      '/images_project/ping.png' // Utilisation temporaire, à remplacer par une image spécifique
     ],
     technologies: ['Python', 'YOLOv8', 'Roboflow', 'OpenCV', 'Git'],
     features: [
@@ -119,7 +119,7 @@ const projects = [
     description:
       "Site web de vente en ligne pour un restaurant scolaire, dans le cadre d’un projet de formation.",
     images: [
-      '/images_project/DataChecker.png' // Utilisation temporaire, à remplacer par une image spécifique
+      '/images_project/restau.jpg' // Utilisation temporaire, à remplacer par une image spécifique
     ],
     technologies: ['PHP', 'HTML', 'CSS', 'JavaScript'],
     features: [
@@ -162,7 +162,7 @@ const projects = [
     description:
       'Site portfolio responsive avec animations fluides, mode sombre et optimisation SEO.',
     images: [
-      '/images_project/DataChecker.png' // Utilisation temporaire, à remplacer par une image spécifique
+      '/images_project/portfolio.png' // Utilisation temporaire, à remplacer par une image spécifique
     ],
     technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'Vercel'],
     features: [
