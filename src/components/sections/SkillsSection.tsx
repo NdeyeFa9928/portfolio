@@ -6,29 +6,36 @@ const skillCategories = [
   {
     title: 'Frontend',
     skills: [
-      { name: 'React', level: 90, color: 'bg-blue-500' },
-      { name: 'Next.js', level: 85, color: 'bg-gray-800' },
-      { name: 'TypeScript', level: 80, color: 'bg-blue-600' },
+      { name: 'javascript', level: 70, color: 'bg-yellow-500' },
+      { name: 'html/css', level: 80, color: 'bg-orange-500' },
       { name: 'Tailwind CSS', level: 95, color: 'bg-teal-500' },
-      { name: 'JavaScript', level: 90, color: 'bg-yellow-500' },
+      { name: 'bootstrap', level: 70, color: 'bg-purple-500' },
+      { name: 'react', level: 80, color: 'bg-blue-500' },
+      { name: 'next.js', level: 70, color: 'bg-blue-600' },
     ]
   },
   {
     title: 'Backend',
     skills: [
-      { name: 'Node.js', level: 85, color: 'bg-green-600' },
-      { name: 'Python', level: 75, color: 'bg-blue-500' },
+      { name: 'python', level: 90, color: 'bg-blue-500' },
       { name: 'PostgreSQL', level: 80, color: 'bg-blue-700' },
-      { name: 'MongoDB', level: 70, color: 'bg-green-500' },
-      { name: 'API REST', level: 90, color: 'bg-orange-500' },
+      { name: 'Java', level: 80, color: 'bg-orange-600' },
+      { name: 'javascript', level: 70, color: 'bg-yellow-500' },
+      { name: 'sql', level: 80, color: 'bg-green-600' },
+      { name: 'VB.NET', level: 85, color: 'bg-blue-800' },
+      { name: 'php', level: 80, color: 'bg-purple-600' },
+
     ]
   },
   {
     title: 'Outils & DevOps',
     skills: [
       { name: 'Git', level: 95, color: 'bg-red-500' },
-      { name: 'Docker', level: 70, color: 'bg-blue-600' },
-      { name: 'AWS', level: 65, color: 'bg-orange-400' },
+      { name: 'Azure DevOps', level: 70, color: 'bg-blue-700' },
+      { name: 'Trello', level: 70, color: 'bg-blue-400' },
+      { name: 'Scrum', level: 70, color: 'bg-green-500' },
+      { name: 'Postman', level: 70, color: 'bg-orange-500' },
+      { name: 'Canva', level: 70, color: 'bg-pink-500' },
       { name: 'Vercel', level: 90, color: 'bg-black' },
       { name: 'Figma', level: 80, color: 'bg-purple-500' },
     ]
@@ -123,8 +130,8 @@ export default function SkillsSection() {
         
         <div className="flex flex-wrap justify-center gap-4">
           {[
-            'Responsive Design', 'SEO', 'Performance Web', 'Accessibilité',
-            'Tests Unitaires', 'CI/CD', 'Agile/Scrum', 'UX/UI Design'
+            'responsive design', 'tests unitaires','tests d\'integration','déploiement', 'architecture projet', 'gestion de projet',
+            'cycle en V','agile/scrum'
           ].map((skill, index) => (
             <motion.span
               key={skill}
