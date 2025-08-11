@@ -72,7 +72,7 @@ export default function ContactSection() {
           Contactez-moi
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Prêt à donner vie à votre projet ? Discutons de vos idées et créons quelque chose d'extraordinaire ensemble.
+          Prêt à donner vie à votre projet ? Discutons de vos idées et créons quelque chose d&apos;extraordinaire ensemble.
         </p>
       </motion.div>
 
@@ -90,7 +90,7 @@ export default function ContactSection() {
               Informations de contact
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              N'hésitez pas à me contacter pour discuter de vos projets, poser des questions 
+              N&apos;hésitez pas à me contacter pour discuter de vos projets, poser des questions 
               ou simplement dire bonjour. Je réponds généralement dans les 24 heures.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function ContactSection() {
               <p className="text-green-600 text-sm mt-2">Votre message a été envoyé avec succès!</p>
             )}
             {formStatus === 'error' && (
-              <p className="text-red-600 text-sm mt-2">Une erreur s'est produite. Veuillez réessayer.</p>
+              <p className="text-red-600 text-sm mt-2">Une erreur s&apos;est produite. Veuillez réessayer.</p>
             )}
           </form>
         </motion.div>

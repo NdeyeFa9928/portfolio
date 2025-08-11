@@ -19,7 +19,7 @@ export default function FooterSimple() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold">Portfolio</h3>
             <p className="text-gray-400">
-              Ingénieure logicielle fullstack passionnée par l'innovation et le développement de solutions performantes.
+              Ingénieure logicielle fullstack passionnée par l&apos;innovation et le développement de solutions performantes.
             </p>
           </div>
 
