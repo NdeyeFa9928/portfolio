@@ -4,49 +4,99 @@ import { motion } from 'framer-motion'
 import { Calendar, MapPin, Building, GraduationCap } from 'lucide-react'
 
 const experiences = [
-  {
-    type: 'work',
-    title: 'Développeur Full Stack Senior',
-    company: 'Nom de l\'entreprise',
-    location: 'Ville, Pays',
-    period: '2022 - Présent',
-    description: 'Développement d\'applications web modernes avec React, Next.js et Node.js. Lead technique sur plusieurs projets clients.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    achievements: [
-      'Amélioration des performances de 40%',
-      'Migration vers TypeScript',
-      'Encadrement d\'une équipe de 3 développeurs'
-    ]
-  },
-  {
-    type: 'work',
-    title: 'Développeur Frontend',
-    company: 'Autre entreprise',
-    location: 'Ville, Pays',
-    period: '2020 - 2022',
-    description: 'Création d\'interfaces utilisateur responsive et accessibles. Collaboration étroite avec l\'équipe UX/UI.',
-    technologies: ['React', 'Vue.js', 'Sass', 'JavaScript'],
-    achievements: [
-      'Développement de 15+ composants réutilisables',
-      'Implémentation du design system',
-      'Optimisation SEO'
-    ]
-  },
-  {
-    type: 'education',
-    title: 'Master en Informatique',
-    company: 'Université/École',
-    location: 'Ville, Pays',
-    period: '2018 - 2020',
-    description: 'Spécialisation en développement web et génie logiciel. Projet de fin d\'études sur l\'intelligence artificielle.',
-    technologies: ['Python', 'Java', 'Machine Learning', 'Bases de données'],
-    achievements: [
-      'Mention Très Bien',
-      'Projet IA reconnu',
-      'Stage en entreprise'
-    ]
-  }
-]
+   {
+      type: 'work',
+      title: 'Ingénieure Logicielle Fullstack',
+      company: 'COLAS Technologies Nouvelles',
+      location: 'Bihorel, France',
+      period: 'Oct. 2023 – Présent',
+      description: 'Développement fullstack en Python, VB.NET et QGIS pour l’auscultation de chaussées (projets IPM, mesure, floutage).',
+      technologies: ['Python', 'VB.NET', 'PostgreSQL', 'QGIS', 'Git', 'Azure DevOps'],
+      achievements: [
+        'Création et optimisation d’outils de traitement d’images et de données géospatiales, permettant de réduire le temps d’analyse terrain de 30%',
+        'Application des conventions Google Karma et Clean Code, améliorant la maintenabilité et la qualité du code',
+        'Participation à la gestion de projet en méthode Scrum, accélérant le déploiement de nouvelles fonctionnalités'
+      ]
+    },
+    {
+      type: 'work',
+      title: 'Cheffe de Projet',
+      company: 'Hôpital Yvetot',
+      location: 'Yvetot, France',
+      period: 'Déc. 2023 – Mars 2024 (Projet Ingénieur, 4 mois)',
+      description: 'Développement d\'un outil (Python, Roboflow) permettant la détection de médicaments dans un pilulier hospitalier. Management d\'équipe et respect des contraintes du secteur médical.',
+      technologies: ['Python', 'YOLOv8', 'Roboflow', 'IA', 'Apprentissage automatique', 'Git', 'Management'],
+      achievements: [
+        'Création d\'un outil IA de détection automatique de médicaments, réduisant de 50% le temps de contrôle en milieu hospitalier',
+        'Management d\'équipe et respect des contraintes du secteur médical',
+        'Participation à la gestion de projet en méthode Scrum, accélérant le déploiement de nouvelles fonctionnalités'
+      ]
+    },
+    {
+      type: 'work',
+      title: 'Développeuse Fullstack (Stage Erasmus+)',
+      company: 'Universitat Politècnica de València (UPV)',
+      location: 'Valencia, Espagne',
+      period: 'Avr. 2023 – Sept. 2023',
+      description: 'Conception et développement du simulateur web DET2020 pour l’apprentissage des fonctions logiques.',
+      technologies: ['JavaScript', 'SVG', 'Figma', 'Fullstack Web', 'Gestion de projet'],
+      achievements: [
+        'Développement d’une interface interactive intuitive, facilitant l’apprentissage des fonctions logiques pour plus les étudiants de l’UPV',
+        'Gestion du projet dans un contexte international, améliorant la collaboration multiculturelle',
+        'Optimisation du code et des performances, réduisant de 40% le temps de chargement',
+        'Création d’un simulateur web interactif pour l’apprentissage des fonctions logiques',
+        'pratique de l’anglais et de l’espanol'
+      ]
+    },
+  
+    {
+      type: 'education',
+      title: 'Diplôme d’Ingénieure Généraliste - spécialisation ISN',
+      company: 'ESIGELEC',
+      location: 'Rouen, France',
+      period: '2021 – 2024',
+      description: 'Spécialisation en ingénierie logicielle et développement fullstack.',
+      technologies: ['Java', 'PHP','javaScript', 'Git', 'Azure DevOps', 'Scrum', 'Trello'],
+      achievements: [
+        'site web de vente en ligne pour restaurant scolaire(php)',
+        'projet de gestion de salles de classes C#',
+        'application mobile de livraison (android studio)',
+        'Développement d’un outil IA de détection automatique de médicaments, réduisant de 50% le temps de contrôle en milieu hospitalier',
+        '2ème prix au concours Med\'Ing Hack (Octobre 2023)',
+        'Coach Med\'Ing Hack (Octobre 2024)',
+        'Responsable événements – Association Esig’Afrik, contribuant à renforcer la vie associative et la cohésion étudiante',
+        'Projet initiative et créativité pour le recyclage',
+        'Erasmus+ pour un stage de 6 mois à l’UPV en Espagne',
+        'Badge Mobilité Normandie',
+        'Parcours ISN - ESIGELEC',
+        
+      ]
+    },
+    {
+      type: 'education',
+      title: 'Classes Préparatoires Scientifiques',
+      company: 'CPS Dakar',
+      location: 'Dakar, Sénégal',
+      period: '2019 – 2021',
+      description: 'Formation intensive en Mathématiques, Informatique et Sciences de l’Ingénieur.',
+      technologies: [],
+      achievements: [
+        'Acquisition d’une rigueur scientifique et d’une forte capacité de résolution de problèmes complexes'
+      ]
+    },
+    {
+      type: 'education',
+      title: 'Baccalauréat Scientifique S2',
+      company: 'CSC Dakar',
+      location: 'Dakar, Sénégal',
+      period: '2019',
+      technologies: [],
+      achievements: [
+        'passage du concours pour l\'entrée en classes préparatoires'
+      ]
+    }
+  ]
+  
 
 export default function ExperienceSection() {
   return (
