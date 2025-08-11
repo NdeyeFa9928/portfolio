@@ -160,18 +160,24 @@ const projects = [
   {
     title: 'Portfolio personnel',
     description:
-      'Site portfolio responsive avec animations fluides, mode sombre et optimisation SEO.',
+      'Site portfolio professionnel développé avec les technologies modernes du web, présentant mon parcours, mes compétences et mes projets dans une interface interactive et élégante.',
     images: [
-      '/images_project/portfolio.png' // Utilisation temporaire, à remplacer par une image spécifique
+      '/images_project/portfolio.png'
     ],
-    technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'Vercel'],
+    technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Lucide React', 'Vercel'],
     features: [
-      'Design responsive et moderne',
-      'Animations fluides avec Framer Motion',
-      'Mode sombre intégré',
-      'Impact : vitrine claire et professionnelle de mes projets'
+      'Architecture modulaire avec App Router de Next.js 14',
+      'Animations fluides et transitions élégantes avec Framer Motion',
+      'Mode sombre/clair avec détection automatique des préférences système',
+      'Timeline interactive pour les expériences avec points connectés',
+      'Carrousel d\'images pour les projets avec navigation intuitive',
+      'Filtrage dynamique des projets par catégorie',
+      'Téléchargement de documents (CV, diplômes) intégré',
+      'Design responsive optimisé pour tous les appareils',
+      'Optimisation SEO et performances (Core Web Vitals)',
+      'Impact : présentation professionnelle et interactive de mon profil'
     ],
-    links: { demo: '#', github: '#' },
+    links: { demo: 'https://ndeye-fa-portfolio.vercel.app', github: 'https://github.com/NdeyeFa9/portfolio' },
     status: 'Terminé',
     category: 'Portfolio'
   }
