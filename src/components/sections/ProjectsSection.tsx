@@ -1,31 +1,78 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Play } from 'lucide-react'
 import Image from 'next/image'
+import ImageCarousel from '../ui/ImageCarousel'
 
 const projects = [
   {
     title: 'Outils IPM – Auscultation de chaussées',
     description:
       "Suite d'outils pour le traitement d’images et de données géospatiales dans le cadre de l’auscultation routière (IPM, mesure, floutage).",
-    image: '/projects/colas-ipm.jpg', // à remplacer par ton image ou placeholder
-    technologies: ['Python', 'VB.NET', 'PostgreSQL', 'QGIS', 'Azure DevOps', 'Git'],
-    features: [
-      'Traitement automatisé d’images et données géospatiales',
-      'Intégration dans les workflows internes (Azure DevOps)',
-      'Application des conventions Google Karma et Clean Code',
-      'Impact : réduction de 30% du temps d’analyse terrain'
+    images: [
+      '/images_project/IPM_1.jpg',
+      '/images_project/IPM_2.png',
+      '/images_project/IPM_3.png'
     ],
-    links: { demo: '', github: '', video: '' }, // interne
-    status: 'En cours',
+    technologies: ['Python','tkinter', 'GDAL', 'Pyproj', 'QGIS', 'Git',],
+    features: [
+      'Correction de perspective et distorsion optique',
+      'Géoréférencement automatique avec GDAL et Pyproj',
+      'Superposition et fusion d’images',
+      'Ouverture et analyse dans QGIS',
+      'Réduction de 30% du temps d’analyse terrain'
+    ],
+    links: { demo: 'https://moncvnfm.my.canva.site/ma-mission-au-sein-de-tn', github: '', video: '' }, // interne
+    status: 'Terminé',
     category: 'SIG / Géospatial'
   },
+  {
+    title: 'DataChecker – Contrôle automatisé de données capteurs',
+    description:
+      "Application Python avec interface PyQt5 pour vérifier et comparer les données issues de plusieurs systèmes de mesure (AP, LCMS, VIAPIX, LASERPROF) par rapport à une référence.",
+    images: [
+      '/images_project/DataChecker.png',
+      '/images_project/DataChecker2.png',
+      '/images_project/DataChecker3.png'
+    ],
+    technologies: ['Python', 'PyQt5', 'Pandas', 'SQLite', 'Git'],
+    features: [
+      'Chargement et structuration automatique des données',
+      'Analyse par pas configurable pour chaque valeur',
+      'Affichage visuel des résultats avec codes couleurs',
+      'Impact : réduction significative des erreurs de saisie et gain de temps pour l’équipe terrain'
+    ],
+    links: { demo: '', github: '' }, // interne
+    status: 'Terminé',
+    category: 'Data / Outils internes'
+  },
+  {
+    title: 'VisionneuseTN',
+    description:
+      "",
+    images: [
+      '/images_project/VIS.png'
+    ],
+    technologies: ['VB.NET', 'Windows Forms', 'Charting', 'CSV'],
+    features: [
+      'Affichage interactif des profils LiDAR multi-sources',
+      'Outils de mesure et zoom pour analyse fine',
+      'Export CSV et configuration graphique personnalisable',
+      'Impact : amélioration de l’analyse terrain et du partage de résultats avec les équipes'
+    ],
+    links: { demo: '', github: '' }, // interne
+    status: 'En cours',
+    category: 'SIG / Géospatial'
+  },  
   {
     title: 'Détection de médicaments par IA',
     description:
       "Outil de vision par ordinateur permettant la détection automatique de médicaments dans un pilulier hospitalier.",
-    image: '/projects/hopital-yvetot.jpg',
+    images: [
+      '/images_project/DataChecker.png' // Utilisation temporaire, à remplacer par une image spécifique
+    ],
     technologies: ['Python', 'YOLOv8', 'Roboflow', 'OpenCV', 'Git'],
     features: [
       'Entraînement d’un modèle IA sur dataset personnalisé',
@@ -41,7 +88,10 @@ const projects = [
     title: 'DET2020 – Simulateur web (UPV)',
     description:
       "Application pédagogique pour l’apprentissage des fonctions logiques, développée lors d’un stage Erasmus+ à l’UPV (Espagne).",
-    image: '/projects/det2020.jpg',
+    images: [
+      '/images_project/det2020.png',
+      '/images_project/det2020_2.png'
+    ],
     technologies: ['JavaScript', 'SVG', 'Figma'],
     features: [
       'Interface interactive et ergonomique',
@@ -61,7 +111,9 @@ const projects = [
     title: 'PING – Site e-commerce (ESIGELEC)',
     description:
       "Site web de vente en ligne pour un restaurant scolaire, dans le cadre d’un projet de formation.",
-    image: '/projects/ping.jpg',
+    images: [
+      '/images_project/DataChecker.png' // Utilisation temporaire, à remplacer par une image spécifique
+    ],
     technologies: ['PHP', 'HTML', 'CSS', 'JavaScript'],
     features: [
       'Catalogue et gestion du panier',
@@ -81,7 +133,9 @@ const projects = [
     title: 'Application Android de livraison',
     description:
       "Application mobile de gestion de livraisons avec suivi des commandes et interface simple.",
-    image: '/projects/android-app.jpg',
+    images: [
+      '/images_project/android.png'
+    ],
     technologies: ['Java', 'Android Studio'],
     features: [
       'Liste et détails des commandes',
@@ -100,7 +154,9 @@ const projects = [
     title: 'Portfolio personnel',
     description:
       'Site portfolio responsive avec animations fluides, mode sombre et optimisation SEO.',
-    image: '/projects/portfolio.jpg',
+    images: [
+      '/images_project/DataChecker.png' // Utilisation temporaire, à remplacer par une image spécifique
+    ],
     technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'Vercel'],
     features: [
       'Design responsive et moderne',
@@ -125,6 +181,7 @@ const categories = [
 
 
 export default function ProjectsSection() {
+  const [activeCategory, setActiveCategory] = useState('Tous')
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -150,13 +207,14 @@ export default function ProjectsSection() {
         viewport={{ once: true }}
         className="flex flex-wrap justify-center gap-4 mb-12"
       >
-        {categories.map((category, index) => (
+        {categories.map((category) => (
           <motion.button
             key={category}
+            onClick={() => setActiveCategory(category)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-              index === 0
+              category === activeCategory
                 ? 'bg-primary-600 text-white shadow-lg'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900'
             }`}
@@ -168,7 +226,9 @@ export default function ProjectsSection() {
 
       {/* Projects Grid */}
       <div className="grid lg:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
+        {projects
+          .filter(project => activeCategory === 'Tous' || project.category === activeCategory)
+          .map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 50 }}
@@ -178,29 +238,28 @@ export default function ProjectsSection() {
             whileHover={{ y: -5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
           >
-            {/* Project Image */}
-            <div className="relative h-64 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-gray-700 dark:to-gray-600">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-6xl">🚀</div>
-              </div>
+            {/* Project Image Carousel */}
+            <ImageCarousel 
+              images={project.images} 
+              alt={project.title}
+            />
               
-              {/* Status Badge */}
-              <div className="absolute top-4 right-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  project.status === 'Terminé'
-                    ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                    : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
-                }`}>
-                  {project.status}
-                </span>
-              </div>
+            {/* Status Badge */}
+            <div className="absolute top-4 right-4 z-10">
+              <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                project.status === 'Terminé'
+                  ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                  : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
+              }`}>
+                {project.status}
+              </span>
+            </div>
 
-              {/* Category Badge */}
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-primary-600 text-white rounded-full text-xs font-medium">
-                  {project.category}
-                </span>
-              </div>
+            {/* Category Badge */}
+            <div className="absolute top-4 left-4 z-10">
+              <span className="px-3 py-1 bg-primary-600 text-white rounded-full text-xs font-medium">
+                {project.category}
+              </span>
             </div>
 
             {/* Project Content */}
