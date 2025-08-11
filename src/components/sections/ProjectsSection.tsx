@@ -1,89 +1,213 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Play } from 'lucide-react'
 import Image from 'next/image'
+import ImageCarousel from '../ui/ImageCarousel'
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'Plateforme e-commerce complète avec panier, paiement et gestion des commandes. Interface moderne et responsive.',
-    image: '/placeholder-project-1.jpg',
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Tailwind CSS'],
+    title: 'Outils IPM – Auscultation de chaussées',
+    description:
+      "Suite d'outils Python pour le traitement avancé d'images et de données géospatiales dans le cadre de l'auscultation routière, permettant l'automatisation des processus de correction, géoréférencement et analyse des images de chaussées.",
+    images: [
+      '/images_project/IPM_1.jpg',
+      '/images_project/IPM_2.png',
+      '/images_project/IPM_3.png'
+    ],
+    technologies: ['Python','tkinter', 'GDAL', 'Pyproj', 'QGIS', 'Git'],
+    skills: ['Traitement d\'images', 'Géomatique', 'Automatisation', 'Développement d\'interfaces', 'Algorithmie spatiale', 'Intégration SIG'],
     features: [
-      'Authentification utilisateur',
-      'Panier et checkout',
-      'Dashboard admin',
-      'Paiements sécurisés'
+      'Correction de perspective et distorsion optique',
+      'Géoréférencement automatique avec GDAL et Pyproj',
+      'Superposition et fusion d\'images',
+      'Ouverture et analyse dans QGIS',
+      'Réduction de 30% du temps d\'analyse terrain'
+    ],
+    links: { demo: 'https://moncvnfm.my.canva.site/ma-mission-au-sein-de-tn', github: '', video: '' }, // interne
+    status: 'Terminé',
+    category: 'SIG / Géospatial'
+  },
+  {
+    title: 'DataChecker – Contrôle automatisé de données capteurs',
+    description:
+      "Application desktop professionnelle développée pour COLAS Technologies Nouvelles, permettant l'analyse et la validation automatisée des données multi-sources issues de capteurs d'auscultation routière, avec une interface utilisateur intuitive et un système avancé de détection d'anomalies.",
+    images: [
+      '/images_project/DataChecker.png',
+      '/images_project/DataChecker2.png',
+      '/images_project/DataChecker3.png'
+    ],
+    technologies: ['Python', 'PyQt5', 'Pandas', 'SQLite', 'Access', 'CSV', 'Git'],
+    skills: ['Développement d\'interfaces graphiques', 'Traitement de données', 'Interopérabilité multi-formats', 'Gestion d\'erreurs', 'Tests unitaires', 'Documentation technique'],
+    features: [
+      'Chargement multi-formats : bases Access, SQLite, fichiers .fiss et CSV',
+      'Contrôle de cohérence avec une référence définie',
+      'Conversion des valeurs en longueurs normalisées',
+      'Export des résultats analysés au format CSV',
+      'Affichage visuel clair avec codes couleurs (vert/jaune/rouge)',
+      'Journal d\'erreurs détaillé pour suivi et diagnostic précis',
+      'Impact : réduction significative des erreurs de saisie et gain de temps pour l\'équipe terrain'
+    ],
+    links: { demo: 'https://moncvnfm.my.canva.site/datachecker', github: '' }, // outil interne, pas de lien public
+    status: 'Terminé',
+    category: 'Data / Outils internes'
+  },
+  
+  {
+    title: 'VisionneuseTN - Ajout système de mesure',
+    description:
+      "Extension majeure d'une application métier de visualisation d'images routières, intégrant un système de mesure précis basé sur des grilles de référence calibrées. Cette évolution permet aux techniciens d'effectuer des mesures directement sur les images capturées par les véhicules d'auscultation, améliorant significativement la précision et la rapidité des analyses.",
+    images: [
+      '/images_project/VIS.png'
+    ],
+    technologies: ['VB.NET', 'Windows Forms', 'Visual Studio', 'Viapix'],
+    skills: ['Développement desktop', 'Calcul matriciel', 'Géométrie computationnelle', 'Maintenance applicative', 'Optimisation de performances', 'Tests d\'intégration'],
+    features: [
+      'Intégration d\'une grille de référence fournie par un technicien',
+      'Développement du placement de points et recalcul de la grille',
+      'Calcul automatique des distances à partir des points placés',
+      'Gestion de l\'affichage dynamique de la grille dans l\'application',
+      'Support de plusieurs grilles et chargement automatique selon l\'image',
+      'Impact : gain de précision et rapidité pour les mesures client',
+      'Fiabilité de l\'application : 98%'
+    ],
+    links: { demo: 'https://moncvnfm.my.canva.site/ma-mission-au-sein-de-tn', github: '' }, // interne
+    status: 'Terminé',
+    category: 'SIG / Géospatial'
+  },  
+  {
+    title: 'Détection de médicaments par IA',
+    description:
+      "Solution innovante de vision par ordinateur développée pour l'Hôpital d'Yvetot, permettant l'identification et la vérification automatique des médicaments dans les piluliers des patients. Ce projet a permis de sécuriser la distribution des médicaments et d'optimiser le temps du personnel soignant grâce à l'intelligence artificielle.",
+    images: [
+      '/images_project/ping.png' // Utilisation temporaire, à remplacer par une image spécifique
+    ],
+    technologies: ['Python', 'YOLOv8', 'Roboflow', 'OpenCV', 'Git'],
+    skills: ['Intelligence artificielle', 'Computer Vision', 'Gestion de projet', 'Annotation de données', 'Entraînement de modèles', 'Collaboration interdisciplinaire'],
+    features: [
+      'Entraînement d\'un modèle IA sur dataset personnalisé',
+      'Détection en temps réel et génération de rapports',
+      'Respect des normes et contraintes médicales',
+      'Impact : réduction de 50% du temps de contrôle'
+    ],
+    links: { demo: '', github: '', video: '' },
+    status: 'Terminé',
+    category: 'IA / Computer Vision'
+  },
+  {
+    title: 'DET2020 – Simulateur web (UPV)',
+    description:
+      "Application web pédagogique interactive développée pendant mon stage Erasmus+ à l'Université Polytechnique de Valence (Espagne), permettant aux étudiants d'ingénierie d'apprendre et de pratiquer les fonctions logiques électroniques via une interface intuitive et des simulations en temps réel.",
+    images: [
+      '/images_project/det2020.png',
+      '/images_project/det2020_2.png'
+    ],
+    technologies: ['JavaScript', 'SVG', 'Figma', 'HTML5', 'CSS3'],
+    skills: ['Développement frontend', 'Conception UX/UI', 'Optimisation de performances', 'Internationalisation', 'Collaboration internationale', 'Prototypage'],
+    features: [
+      'Interface interactive et ergonomique',
+      'Moteur de simulation des fonctions logiques',
+      'Optimisation des performances',
+      'Support multilingue (espagnol, anglais)',
+      'Impact : utilisé par les étudiants de l\'UPV chez eux'
     ],
     links: {
-      demo: '#',
-      github: '#',
-      video: '#'
+      demo: 'https://moncvnfm.my.canva.site/det2020',
+      github: '',
+      video: ''
     },
     status: 'Terminé',
     category: 'Web App'
   },
   {
-    title: 'Task Management App',
-    description: 'Application de gestion de tâches collaborative avec drag & drop, notifications en temps réel et tableaux Kanban.',
-    image: '/placeholder-project-2.jpg',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Material-UI'],
+    title: 'PING – Site e-commerce (ESIGELEC)',
+    description:
+      "Plateforme e-commerce complète développée pour un restaurant scolaire de l'ESIGELEC, permettant aux étudiants de commander leurs repas en ligne. Ce projet académique a été réalisé en équipe avec une méthodologie de développement structurée et a abouti à une solution fonctionnelle déployée en production.",
+    images: [
+      '/images_project/restau.jpg'
+    ],
+    technologies: ['PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Bootstrap'],
+    skills: ['Développement web fullstack', 'Gestion de base de données', 'Travail en équipe', 'Méthodologie Cycle en V', 'Sécurité web', 'Déploiement'],
     features: [
-      'Tableaux Kanban',
-      'Collaboration temps réel',
-      'Notifications push',
-      'Gestion des équipes'
+      'Catalogue de produits avec filtres et recherche',
+      'Système de panier et paiement sécurisé',
+      'Espace administrateur pour gestion des commandes et produits',
+      'Authentification et gestion des comptes utilisateurs',
+      'Responsive design pour accès mobile',
+      'Impact : prise de commandes en ligne et meilleure visibilité'
     ],
     links: {
-      demo: '#',
-      github: '#',
-      video: '#'
+      demo: 'https://nfm.free.nf/',
+      github: '',
+      video: ''
     },
-    status: 'En cours',
-    category: 'SaaS'
+    status: 'Terminé',
+    category: 'Web App'
   },
   {
-    title: 'Portfolio Personnel',
-    description: 'Site portfolio responsive avec animations fluides, mode sombre et optimisé pour les performances.',
-    image: '/placeholder-project-3.jpg',
-    technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'Vercel'],
+    title: 'Application Android de livraison',
+    description:
+      "Application mobile native développée pour optimiser le processus de livraison, permettant aux livreurs de suivre leurs commandes en temps réel, de mettre à jour leur statut et d'améliorer la communication avec les clients et le centre de distribution.",
+    images: [
+      '/images_project/android.png'
+    ],
+    technologies: ['Java', 'Android Studio', 'SQLite', 'XML', 'Material Design'],
+    skills: ['Développement mobile', 'Conception d\'interfaces utilisateur', 'Stockage local de données', 'Tests sur appareils réels', 'Cycle de vie des applications', 'Gestion d\'API'],
     features: [
-      'Design responsive',
-      'Animations fluides',
-      'Mode sombre',
-      'SEO optimisé'
+      'Liste et détails des commandes avec recherche et filtres',
+      'Mise à jour du statut de livraison en temps réel',
+      'Notifications push pour les nouvelles commandes',
+      'Mode hors ligne avec synchronisation automatique',
+      'Interface native Android optimisée pour différentes tailles d\'écran',
+      'Impact : réduction de 25% du temps de traitement des livraisons'
     ],
     links: {
-      demo: '#',
-      github: '#'
+      demo: 'https://moncvnfm.my.canva.site/android-app',
+      github: ''
     },
+    status: 'Terminé',
+    category: 'Mobile'
+  },
+  {
+    title: 'Portfolio personnel',
+    description:
+      'Site portfolio professionnel développé avec les technologies modernes du web, présentant mon parcours, mes compétences et mes projets dans une interface interactive et élégante. Conçu comme une vitrine complète de mon profil d\'ingénieure logicielle fullstack, il met en valeur mes réalisations techniques et mon parcours professionnel.',
+    images: [
+      '/images_project/portfolio.png'
+    ],
+    technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Lucide React', 'Vercel'],
+    skills: ['Développement frontend avancé', 'Architecture React moderne', 'Animations et transitions', 'Responsive design', 'Déploiement continu', 'Optimisation web'],
+    features: [
+      'Architecture modulaire avec App Router de Next.js 14',
+      'Animations fluides et transitions élégantes avec Framer Motion',
+      'Mode sombre/clair avec détection automatique des préférences système',
+      'Timeline interactive pour les expériences avec points connectés',
+      'Carrousel d\'images pour les projets avec navigation intuitive',
+      'Filtrage dynamique des projets par catégorie',
+      'Téléchargement de documents (CV, diplômes) intégré',
+      'Design responsive optimisé pour tous les appareils',
+      'Optimisation SEO et performances (Core Web Vitals)',
+      'Impact : présentation professionnelle et interactive de mon profil'
+    ],
+    links: { demo: 'https://ndeye-fa-portfolio.vercel.app', github: 'https://github.com/NdeyeFa9/portfolio' },
     status: 'Terminé',
     category: 'Portfolio'
-  },
-  {
-    title: 'API REST Blog',
-    description: 'API REST complète pour un blog avec authentification JWT, upload d\'images et système de commentaires.',
-    image: '/placeholder-project-4.jpg',
-    technologies: ['Node.js', 'Express', 'JWT', 'Cloudinary', 'PostgreSQL'],
-    features: [
-      'Authentification JWT',
-      'CRUD articles',
-      'Upload images',
-      'Système commentaires'
-    ],
-    links: {
-      github: '#',
-      documentation: '#'
-    },
-    status: 'Terminé',
-    category: 'Backend'
   }
 ]
 
-const categories = ['Tous', 'Web App', 'SaaS', 'Portfolio', 'Backend']
+const categories = [
+  'Tous',
+  'Web App',
+  'Mobile',
+  'IA / Computer Vision',
+  'SIG / Géospatial',
+  'Portfolio'
+]
+
 
 export default function ProjectsSection() {
+  const [activeCategory, setActiveCategory] = useState('Tous')
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -109,13 +233,14 @@ export default function ProjectsSection() {
         viewport={{ once: true }}
         className="flex flex-wrap justify-center gap-4 mb-12"
       >
-        {categories.map((category, index) => (
+        {categories.map((category) => (
           <motion.button
             key={category}
+            onClick={() => setActiveCategory(category)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-              index === 0
+              category === activeCategory
                 ? 'bg-primary-600 text-white shadow-lg'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900'
             }`}
@@ -127,7 +252,9 @@ export default function ProjectsSection() {
 
       {/* Projects Grid */}
       <div className="grid lg:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
+        {projects
+          .filter(project => activeCategory === 'Tous' || project.category === activeCategory)
+          .map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 50 }}
@@ -137,29 +264,28 @@ export default function ProjectsSection() {
             whileHover={{ y: -5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
           >
-            {/* Project Image */}
-            <div className="relative h-64 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-gray-700 dark:to-gray-600">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-6xl">🚀</div>
-              </div>
+            {/* Project Image Carousel */}
+            <ImageCarousel 
+              images={project.images} 
+              alt={project.title}
+            />
               
-              {/* Status Badge */}
-              <div className="absolute top-4 right-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  project.status === 'Terminé'
-                    ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                    : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
-                }`}>
-                  {project.status}
-                </span>
-              </div>
+            {/* Status Badge */}
+            <div className="absolute top-4 right-4 z-10">
+              <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                project.status === 'Terminé'
+                  ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                  : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
+              }`}>
+                {project.status}
+              </span>
+            </div>
 
-              {/* Category Badge */}
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-primary-600 text-white rounded-full text-xs font-medium">
-                  {project.category}
-                </span>
-              </div>
+            {/* Category Badge */}
+            <div className="absolute top-4 left-4 z-10">
+              <span className="px-3 py-1 bg-primary-600 text-white rounded-full text-xs font-medium">
+                {project.category}
+              </span>
             </div>
 
             {/* Project Content */}
