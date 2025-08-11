@@ -16,6 +16,7 @@ const navigation = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,35 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    // Charger le thème sauvegardé au démarrage
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      setIsDark(true)
+    } else if (savedTheme === 'light') {
+      setIsDark(false)
+    } else {
+      // Utiliser la préférence système si aucun thème sauvegardé
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      setIsDark(prefersDark)
+    }
+  }, [])
+
+  useEffect(() => {
+    // Appliquer le thème au document et le sauvegarder
+    if (isDark) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [isDark])
+
+  const toggleTheme = () => {
+    setIsDark(!isDark)
+  }
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -74,6 +104,17 @@ export default function Header() {
                   {item.name}
                 </motion.button>
               ))}
+              
+              {/* Theme Toggle Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={toggleTheme}
+                className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                aria-label="Basculer le thème"
+              >
+                <span className="text-xl">{isDark ? '☀️' : '🌙'}</span>
+              </motion.button>
             </div>
           </div>
 
@@ -109,6 +150,16 @@ export default function Header() {
                   {item.name}
                 </motion.button>
               ))}
+              
+              {/* Mobile Theme Toggle */}
+              <motion.button
+                whileHover={{ x: 10 }}
+                onClick={toggleTheme}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 w-full text-left flex items-center gap-2"
+              >
+                <span className="text-lg">{isDark ? '☀️' : '🌙'}</span>
+                {isDark ? 'Mode clair' : 'Mode sombre'}
+              </motion.button>
             </div>
           </motion.div>
         )}

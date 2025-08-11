@@ -39,7 +39,7 @@ export default function HeroSection() {
     }, 3000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [roleTitles.length]);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24">

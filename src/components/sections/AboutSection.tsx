@@ -34,7 +34,7 @@ export default function AboutSection() {
           >
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-700 leading-relaxed">
-                Passionnée par le développement logiciel, j'allie rigueur technique et sens de l'adaptation pour concevoir des solutions performantes et maintenables.
+                Passionnée par le développement logiciel, j&apos;allie rigueur technique et sens de l&apos;adaptation pour concevoir des solutions performantes et maintenables.
               </p>
               
               <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500 mt-8">
@@ -42,8 +42,8 @@ export default function AboutSection() {
                   <span className="mr-2">💡</span> Ce qui me motive
                 </h3>
                 <p className="text-gray-700">
-                  Créer des outils qui répondent à des besoins concrets, tout en veillant à la qualité du code et à l'expérience utilisateur.
-                  Mon approche repose sur l'autonomie, la collaboration agile et l'apprentissage continu des dernières technologies.
+                  Créer des outils qui répondent à des besoins concrets, tout en veillant à la qualité du code et à l&apos;expérience utilisateur.
+                  Mon approche repose sur l&apos;autonomie, la collaboration agile et l&apos;apprentissage continu des dernières technologies.
                 </p>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function AboutSection() {
                 className="bg-white p-4 rounded-xl shadow-sm border-t-4 border-blue-500 text-center"
               >
                 <p className="text-3xl font-bold text-blue-600">2+</p>
-                <p className="text-gray-600 text-sm">ans d'expérience</p>
+                <p className="text-gray-600 text-sm">ans d&apos;expérience</p>
               </motion.div>
               
               <motion.div
