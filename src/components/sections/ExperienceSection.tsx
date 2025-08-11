@@ -118,7 +118,7 @@ export default function ExperienceSection() {
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-primary-200 dark:bg-primary-800"></div>
+        <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-1 bg-blue-500 dark:bg-blue-600"></div>
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
@@ -132,9 +132,10 @@ export default function ExperienceSection() {
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Timeline dot */}
-              <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-gray-900 z-10">
-                <div className="absolute inset-0 bg-primary-600 rounded-full animate-ping opacity-20"></div>
+              {/* Timeline dot - version moderne */}
+              <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full border-4 border-white dark:border-gray-900 z-10 shadow-lg shadow-blue-500/30 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-pulse opacity-70"></div>
+                <div className="w-2 h-2 bg-white rounded-full z-20"></div>
               </div>
 
               {/* Content */}
@@ -186,22 +187,24 @@ export default function ExperienceSection() {
                     {exp.description}
                   </p>
 
-                  {/* Technologies */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                      Technologies utilisées
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                  {/* Technologies - seulement si des technologies sont présentes */}
+                  {exp.technologies && exp.technologies.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+                        Technologies utilisées
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {/* Achievements */}
                   <div>
@@ -214,12 +217,38 @@ export default function ExperienceSection() {
                           key={achIndex}
                           className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300"
                         >
-                          <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                           <span>{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
+                  
+                  {/* Boutons de téléchargement pour ESIGELEC */}
+                  {exp.company === 'ESIGELEC' && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <a 
+                        href="/documents/diplome_Attestation_Diplôme.pdf" 
+                        target="_blank"
+                        className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Attestation de diplôme
+                      </a>
+                      <a 
+                        href="/documents/PPP_NFM_bon.pdf" 
+                        target="_blank"
+                        className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Projet Personnel Professionnel
+                      </a>
+                    </div>
+                  )}
                 </motion.div>
               </div>
 
