@@ -1,7 +1,7 @@
 // Données personnelles pour le portfolio
 
 export const personalInfo = {
-  name: 'Fatou',
+  name: 'Ndeye Fatou',
   title: 'Ingénieure Logicielle Fullstack',
   age: 24,
   tagline: 'Un ingénieur est un artisan du futur qui conçoit avec rigueur les outils du progrès',
