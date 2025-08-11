@@ -147,8 +147,8 @@ export default function HeroSection() {
               transition={{ delay: 0.4 }}
               className="text-lg text-gray-600 leading-relaxed max-w-lg space-y-3"
             >
-              <p>Ingénieure logicielle fullstack passionnée, avec plus de 2 ans d'expérience en développement web et logiciel.</p>
-              <p>J'aide les entreprises à créer des solutions performantes et évolutives grâce à ma proactivité et ma capacité d'adaptation.</p>
+              <p>Ingénieure logicielle fullstack passionnée, avec plus de 2 ans d&apos;expérience en développement web et logiciel.</p>
+              <p>J&apos;aide les entreprises à créer des solutions performantes et évolutives grâce à ma proactivité et ma capacité d&apos;adaptation.</p>
               <div className="text-blue-600 font-medium">
                 {[
                   { name: "Python", delay: 0.1 },
