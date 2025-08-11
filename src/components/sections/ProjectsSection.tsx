@@ -49,21 +49,24 @@ const projects = [
     category: 'Data / Outils internes'
   },
   {
-    title: 'VisionneuseTN',
+    title: 'VisionneuseTN - Ajout système de mesure',
     description:
-      "",
+      "Amélioration d’une application interne de visualisation d’images en y intégrant un système de mesure basé sur des grilles de référence. Permet de placer des points, recalculer la grille et afficher les mesures directement sur l’image.",
     images: [
       '/images_project/VIS.png'
     ],
-    technologies: ['VB.NET', 'Windows Forms', 'Charting', 'CSV'],
+    technologies: ['VB.NET', 'Windows Forms','visual studio','viapix'],
     features: [
-      'Affichage interactif des profils LiDAR multi-sources',
-      'Outils de mesure et zoom pour analyse fine',
-      'Export CSV et configuration graphique personnalisable',
-      'Impact : amélioration de l’analyse terrain et du partage de résultats avec les équipes'
+      'Intégration d’une grille de référence fournie par un technicien',
+      'Développement du placement de points et recalcul de la grille',
+      'Calcul automatique des distances à partir des points placés',
+      'Gestion de l’affichage dynamique de la grille dans l’application',
+      'Support de plusieurs grilles et chargement automatique selon l’image',
+      'Impact : gain de précision et rapidité pour les mesures client',
+      'fiabilité de l’application : 98% '
     ],
-    links: { demo: '', github: '' }, // interne
-    status: 'En cours',
+    links: { demo: 'https://moncvnfm.my.canva.site/ma-mission-au-sein-de-tn', github: '' }, // interne
+    status: 'Terminé',
     category: 'SIG / Géospatial'
   },  
   {
