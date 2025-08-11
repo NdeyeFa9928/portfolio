@@ -31,23 +31,27 @@ const projects = [
   {
     title: 'DataChecker – Contrôle automatisé de données capteurs',
     description:
-      "Application Python avec interface PyQt5 pour vérifier et comparer les données issues de plusieurs systèmes de mesure (AP, LCMS, VIAPIX, LASERPROF) par rapport à une référence.",
+      "Application Python avec interface PyQt5 pour charger, analyser et vérifier la cohérence des données issues de capteurs routiers (AP, LCMS, Viapix, Laserprof) par rapport à une référence, avec suivi détaillé via un journal d’erreurs.",
     images: [
       '/images_project/DataChecker.png',
       '/images_project/DataChecker2.png',
       '/images_project/DataChecker3.png'
     ],
-    technologies: ['Python', 'PyQt5', 'Pandas', 'SQLite', 'Git'],
+    technologies: ['Python', 'PyQt5', 'Pandas', 'SQLite', 'Access', 'CSV', 'Git'],
     features: [
-      'Chargement et structuration automatique des données',
-      'Analyse par pas configurable pour chaque valeur',
-      'Affichage visuel des résultats avec codes couleurs',
+      'Chargement multi-formats : bases Access, SQLite, fichiers .fiss et CSV',
+      'Contrôle de cohérence avec une référence définie',
+      'Conversion des valeurs en longueurs normalisées',
+      'Export des résultats analysés au format CSV',
+      'Affichage visuel clair avec codes couleurs (vert/jaune/rouge)',
+      'Journal d’erreurs détaillé pour suivi et diagnostic précis',
       'Impact : réduction significative des erreurs de saisie et gain de temps pour l’équipe terrain'
     ],
-    links: { demo: '', github: '' }, // interne
+    links: { demo: 'https://moncvnfm.my.canva.site/datachecker', github: '' }, // outil interne, pas de lien public
     status: 'Terminé',
     category: 'Data / Outils internes'
   },
+  
   {
     title: 'VisionneuseTN - Ajout système de mesure',
     description:
