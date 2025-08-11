@@ -12,7 +12,7 @@ export const personalInfo = {
   drivingLicense: 'Permis B',
   bio: 'Ingénieure logicielle fullstack passionnée, j\'aide les entreprises à concevoir des solutions performantes et évolutives, en mettant à profit mes 2+ années d\'expérience, ma proactivité et ma capacité d\'adaptation.',
   shortBio: 'Ingénieure fullstack Python & Java passionnée par l\'innovation',
-  avatarUrl: '/images/IMG_1918.jpg',
+  avatarUrl: '/images/IMG_1918.JPG',
   resumeUrl: '/documents/CV_CDI_NFM.pdf',
   socialLinks: {
     linkedin: 'https://www.linkedin.com/in/ndeyefa',
