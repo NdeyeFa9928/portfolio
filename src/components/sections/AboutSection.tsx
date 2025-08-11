@@ -35,7 +35,6 @@ export default function AboutSection() {
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-700 leading-relaxed">
                 Passionnée par le développement logiciel, j'allie rigueur technique et sens de l'adaptation pour concevoir des solutions performantes et maintenables.
-                Avec plus de 2 ans d'expérience, j'ai travaillé sur des projets allant de l'auscultation de chaussées à l'IA pour le secteur médical, en passant par le développement web et mobile.
               </p>
               
               <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500 mt-8">
@@ -50,14 +49,14 @@ export default function AboutSection() {
             </div>
 
             {/* Skills */}
-            <div className="space-y-4">
+              <div className="space-y-4">
               <h3 className="text-xl font-semibold text-gray-800">Compétences clés</h3>
               
               <div className="space-y-3">
                 <div>
                   <p className="text-sm font-medium text-gray-600 mb-2">Langages</p>
                   <div className="flex flex-wrap gap-2">
-                    {['Python', 'Java', 'JavaScript', 'PHP', 'C#', 'SQL/PLSQL', 'HTML/CSS'].map((skill, index) => (
+                    {['Python', 'Java','VB.NET', 'JavaScript', 'PHP', 'C#', 'PostgreSQL/SQL', 'HTML/CSS'].map((skill, index) => (
                       <span key={index} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                         {skill}
                       </span>
@@ -68,7 +67,7 @@ export default function AboutSection() {
                 <div>
                   <p className="text-sm font-medium text-gray-600 mb-2">Outils & frameworks</p>
                   <div className="flex flex-wrap gap-2">
-                    {['QGIS', 'OpenCV', 'Spring Boot', 'Next.js', 'Tailwind CSS', 'Android Studio'].map((skill, index) => (
+                    {['Git', 'QGIS', 'OpenCV', 'Next.js', 'Tailwind CSS', 'Android Studio', 'YOLOv8', 'Roboflow'].map((skill, index) => (
                       <span key={index} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
                         {skill}
                       </span>
@@ -79,7 +78,7 @@ export default function AboutSection() {
                 <div>
                   <p className="text-sm font-medium text-gray-600 mb-2">Méthodes</p>
                   <div className="flex flex-wrap gap-2">
-                    {['Scrum', 'Clean Code', 'Conventions Google Karma', 'Gestion de projet Agile'].map((skill, index) => (
+                    {['Scrum', 'Clean Code', 'Conventions Google Karma','Trello','figma','Gestion de projet Agile', 'Azure DevOps'].map((skill, index) => (
                       <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                         {skill}
                       </span>
@@ -90,8 +89,19 @@ export default function AboutSection() {
                 <div>
                   <p className="text-sm font-medium text-gray-600 mb-2">Soft skills</p>
                   <div className="flex flex-wrap gap-2">
-                    {['Proactivité', 'Organisation', 'Communication', 'Travail en équipe'].map((skill, index) => (
+                    {['Proactivité', 'Organisation', 'Communication', 'Travail en équipe', 'Adaptabilité', 'Rigueur'].map((skill, index) => (
                       <span key={index} className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-medium text-gray-600 mb-2">Spécialités</p>
+                  <div className="flex flex-wrap gap-2">
+                    {['IA/ML', 'Traitement d\'images', 'Outils géospatiaux', 'Fullstack', 'Gestion de projet', 'Roboflow'].map((skill, index) => (
+                      <span key={index} className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">
                         {skill}
                       </span>
                     ))}
@@ -115,8 +125,8 @@ export default function AboutSection() {
               <div className="relative bg-white p-4 rounded-xl shadow-lg">
                 <div className="aspect-[4/5] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/images/1000053141.JPEG"
-                    alt="Fatou - Ingénieure Logicielle"
+                    src="/images/diplome.jpg"
+                    alt="Fatou - Ingénieure Logicielle - Diplôme"
                     fill
                     className="object-cover"
                     priority
@@ -139,7 +149,7 @@ export default function AboutSection() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white p-4 rounded-xl shadow-sm border-t-4 border-purple-500 text-center"
               >
-                <p className="text-3xl font-bold text-purple-600">5+</p>
+                <p className="text-3xl font-bold text-purple-600">9+</p>
                 <p className="text-gray-600 text-sm">projets livrés</p>
               </motion.div>
               
