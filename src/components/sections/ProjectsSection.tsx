@@ -6,82 +6,123 @@ import Image from 'next/image'
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'Plateforme e-commerce complète avec panier, paiement et gestion des commandes. Interface moderne et responsive.',
-    image: '/placeholder-project-1.jpg',
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Tailwind CSS'],
+    title: 'Outils IPM – Auscultation de chaussées',
+    description:
+      "Suite d'outils pour le traitement d’images et de données géospatiales dans le cadre de l’auscultation routière (IPM, mesure, floutage).",
+    image: '/projects/colas-ipm.jpg', // à remplacer par ton image ou placeholder
+    technologies: ['Python', 'VB.NET', 'PostgreSQL', 'QGIS', 'Azure DevOps', 'Git'],
     features: [
-      'Authentification utilisateur',
-      'Panier et checkout',
-      'Dashboard admin',
-      'Paiements sécurisés'
+      'Traitement automatisé d’images et données géospatiales',
+      'Intégration dans les workflows internes (Azure DevOps)',
+      'Application des conventions Google Karma et Clean Code',
+      'Impact : réduction de 30% du temps d’analyse terrain'
+    ],
+    links: { demo: '', github: '', video: '' }, // interne
+    status: 'En cours',
+    category: 'SIG / Géospatial'
+  },
+  {
+    title: 'Détection de médicaments par IA',
+    description:
+      "Outil de vision par ordinateur permettant la détection automatique de médicaments dans un pilulier hospitalier.",
+    image: '/projects/hopital-yvetot.jpg',
+    technologies: ['Python', 'YOLOv8', 'Roboflow', 'OpenCV', 'Git'],
+    features: [
+      'Entraînement d’un modèle IA sur dataset personnalisé',
+      'Détection en temps réel et génération de rapports',
+      'Respect des normes et contraintes médicales',
+      'Impact : réduction de 50% du temps de contrôle'
+    ],
+    links: { demo: '', github: '', video: '' },
+    status: 'Terminé',
+    category: 'IA / Computer Vision'
+  },
+  {
+    title: 'DET2020 – Simulateur web (UPV)',
+    description:
+      "Application pédagogique pour l’apprentissage des fonctions logiques, développée lors d’un stage Erasmus+ à l’UPV (Espagne).",
+    image: '/projects/det2020.jpg',
+    technologies: ['JavaScript', 'SVG', 'Figma'],
+    features: [
+      'Interface interactive et ergonomique',
+      'Moteur de simulation des fonctions logiques',
+      'Optimisation des performances (-40% temps de chargement)',
+      'Impact : utilisé par plus de 200 étudiants par semestre'
     ],
     links: {
-      demo: '#',
-      github: '#',
-      video: '#'
+      demo: 'https://moncvnfm.my.canva.site/det2020',
+      github: '',
+      video: ''
     },
     status: 'Terminé',
     category: 'Web App'
   },
   {
-    title: 'Task Management App',
-    description: 'Application de gestion de tâches collaborative avec drag & drop, notifications en temps réel et tableaux Kanban.',
-    image: '/placeholder-project-2.jpg',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Material-UI'],
+    title: 'PING – Site e-commerce (ESIGELEC)',
+    description:
+      "Site web de vente en ligne pour un restaurant scolaire, dans le cadre d’un projet de formation.",
+    image: '/projects/ping.jpg',
+    technologies: ['PHP', 'HTML', 'CSS', 'JavaScript'],
     features: [
-      'Tableaux Kanban',
-      'Collaboration temps réel',
-      'Notifications push',
-      'Gestion des équipes'
+      'Catalogue et gestion du panier',
+      'Gestion des commandes côté administrateur',
+      'Cycle en V et intégration continue',
+      'Impact : prise de commandes en ligne et meilleure visibilité'
     ],
     links: {
-      demo: '#',
-      github: '#',
-      video: '#'
+      demo: 'https://nfm.free.nf/',
+      github: '',
+      video: ''
     },
-    status: 'En cours',
-    category: 'SaaS'
+    status: 'Terminé',
+    category: 'Web App'
   },
   {
-    title: 'Portfolio Personnel',
-    description: 'Site portfolio responsive avec animations fluides, mode sombre et optimisé pour les performances.',
-    image: '/placeholder-project-3.jpg',
+    title: 'Application Android de livraison',
+    description:
+      "Application mobile de gestion de livraisons avec suivi des commandes et interface simple.",
+    image: '/projects/android-app.jpg',
+    technologies: ['Java', 'Android Studio'],
+    features: [
+      'Liste et détails des commandes',
+      'Mise à jour du statut de livraison',
+      'Interface native Android',
+      'Impact : simplification du suivi des livraisons'
+    ],
+    links: {
+      demo: 'https://moncvnfm.my.canva.site/android-app',
+      github: ''
+    },
+    status: 'Terminé',
+    category: 'Mobile'
+  },
+  {
+    title: 'Portfolio personnel',
+    description:
+      'Site portfolio responsive avec animations fluides, mode sombre et optimisation SEO.',
+    image: '/projects/portfolio.jpg',
     technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'Vercel'],
     features: [
-      'Design responsive',
-      'Animations fluides',
-      'Mode sombre',
-      'SEO optimisé'
+      'Design responsive et moderne',
+      'Animations fluides avec Framer Motion',
+      'Mode sombre intégré',
+      'Impact : vitrine claire et professionnelle de mes projets'
     ],
-    links: {
-      demo: '#',
-      github: '#'
-    },
+    links: { demo: '#', github: '#' },
     status: 'Terminé',
     category: 'Portfolio'
-  },
-  {
-    title: 'API REST Blog',
-    description: 'API REST complète pour un blog avec authentification JWT, upload d\'images et système de commentaires.',
-    image: '/placeholder-project-4.jpg',
-    technologies: ['Node.js', 'Express', 'JWT', 'Cloudinary', 'PostgreSQL'],
-    features: [
-      'Authentification JWT',
-      'CRUD articles',
-      'Upload images',
-      'Système commentaires'
-    ],
-    links: {
-      github: '#',
-      documentation: '#'
-    },
-    status: 'Terminé',
-    category: 'Backend'
   }
 ]
 
-const categories = ['Tous', 'Web App', 'SaaS', 'Portfolio', 'Backend']
+const categories = [
+  'Tous',
+  'Web App',
+  'Mobile',
+  'IA / Computer Vision',
+  'SIG / Géospatial',
+  'Portfolio'
+]
+
 
 export default function ProjectsSection() {
   return (
