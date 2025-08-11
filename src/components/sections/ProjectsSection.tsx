@@ -269,24 +269,6 @@ export default function ProjectsSection() {
               images={project.images} 
               alt={project.title}
             />
-              
-            {/* Status Badge */}
-            <div className="absolute top-4 right-4 z-10">
-              <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                project.status === 'Terminé'
-                  ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                  : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
-              }`}>
-                {project.status}
-              </span>
-            </div>
-
-            {/* Category Badge */}
-            <div className="absolute top-4 left-4 z-10">
-              <span className="px-3 py-1 bg-primary-600 text-white rounded-full text-xs font-medium">
-                {project.category}
-              </span>
-            </div>
 
             {/* Project Content */}
             <div className="p-8">
