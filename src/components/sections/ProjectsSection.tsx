@@ -10,19 +10,20 @@ const projects = [
   {
     title: 'Outils IPM – Auscultation de chaussées',
     description:
-      "Suite d'outils pour le traitement d’images et de données géospatiales dans le cadre de l’auscultation routière (IPM, mesure, floutage).",
+      "Suite d'outils Python pour le traitement avancé d'images et de données géospatiales dans le cadre de l'auscultation routière, permettant l'automatisation des processus de correction, géoréférencement et analyse des images de chaussées.",
     images: [
       '/images_project/IPM_1.jpg',
       '/images_project/IPM_2.png',
       '/images_project/IPM_3.png'
     ],
-    technologies: ['Python','tkinter', 'GDAL', 'Pyproj', 'QGIS', 'Git',],
+    technologies: ['Python','tkinter', 'GDAL', 'Pyproj', 'QGIS', 'Git'],
+    skills: ['Traitement d\'images', 'Géomatique', 'Automatisation', 'Développement d\'interfaces', 'Algorithmie spatiale', 'Intégration SIG'],
     features: [
       'Correction de perspective et distorsion optique',
       'Géoréférencement automatique avec GDAL et Pyproj',
-      'Superposition et fusion d’images',
+      'Superposition et fusion d\'images',
       'Ouverture et analyse dans QGIS',
-      'Réduction de 30% du temps d’analyse terrain'
+      'Réduction de 30% du temps d\'analyse terrain'
     ],
     links: { demo: 'https://moncvnfm.my.canva.site/ma-mission-au-sein-de-tn', github: '', video: '' }, // interne
     status: 'Terminé',
@@ -31,21 +32,22 @@ const projects = [
   {
     title: 'DataChecker – Contrôle automatisé de données capteurs',
     description:
-      "Application Python avec interface PyQt5 pour charger, analyser et vérifier la cohérence des données issues de capteurs routiers (AP, LCMS, Viapix, Laserprof) par rapport à une référence, avec suivi détaillé via un journal d’erreurs.",
+      "Application desktop professionnelle développée pour COLAS Technologies Nouvelles, permettant l'analyse et la validation automatisée des données multi-sources issues de capteurs d'auscultation routière, avec une interface utilisateur intuitive et un système avancé de détection d'anomalies.",
     images: [
       '/images_project/DataChecker.png',
       '/images_project/DataChecker2.png',
       '/images_project/DataChecker3.png'
     ],
     technologies: ['Python', 'PyQt5', 'Pandas', 'SQLite', 'Access', 'CSV', 'Git'],
+    skills: ['Développement d\'interfaces graphiques', 'Traitement de données', 'Interopérabilité multi-formats', 'Gestion d\'erreurs', 'Tests unitaires', 'Documentation technique'],
     features: [
       'Chargement multi-formats : bases Access, SQLite, fichiers .fiss et CSV',
       'Contrôle de cohérence avec une référence définie',
       'Conversion des valeurs en longueurs normalisées',
       'Export des résultats analysés au format CSV',
       'Affichage visuel clair avec codes couleurs (vert/jaune/rouge)',
-      'Journal d’erreurs détaillé pour suivi et diagnostic précis',
-      'Impact : réduction significative des erreurs de saisie et gain de temps pour l’équipe terrain'
+      'Journal d\'erreurs détaillé pour suivi et diagnostic précis',
+      'Impact : réduction significative des erreurs de saisie et gain de temps pour l\'équipe terrain'
     ],
     links: { demo: 'https://moncvnfm.my.canva.site/datachecker', github: '' }, // outil interne, pas de lien public
     status: 'Terminé',
@@ -55,19 +57,20 @@ const projects = [
   {
     title: 'VisionneuseTN - Ajout système de mesure',
     description:
-      "Amélioration d’une application interne de visualisation d’images en y intégrant un système de mesure basé sur des grilles de référence. Permet de placer des points, recalculer la grille et afficher les mesures directement sur l’image.",
+      "Extension majeure d'une application métier de visualisation d'images routières, intégrant un système de mesure précis basé sur des grilles de référence calibrées. Cette évolution permet aux techniciens d'effectuer des mesures directement sur les images capturées par les véhicules d'auscultation, améliorant significativement la précision et la rapidité des analyses.",
     images: [
       '/images_project/VIS.png'
     ],
-    technologies: ['VB.NET', 'Windows Forms','visual studio','viapix'],
+    technologies: ['VB.NET', 'Windows Forms', 'Visual Studio', 'Viapix'],
+    skills: ['Développement desktop', 'Calcul matriciel', 'Géométrie computationnelle', 'Maintenance applicative', 'Optimisation de performances', 'Tests d\'intégration'],
     features: [
-      'Intégration d’une grille de référence fournie par un technicien',
+      'Intégration d\'une grille de référence fournie par un technicien',
       'Développement du placement de points et recalcul de la grille',
       'Calcul automatique des distances à partir des points placés',
-      'Gestion de l’affichage dynamique de la grille dans l’application',
-      'Support de plusieurs grilles et chargement automatique selon l’image',
+      'Gestion de l\'affichage dynamique de la grille dans l\'application',
+      'Support de plusieurs grilles et chargement automatique selon l\'image',
       'Impact : gain de précision et rapidité pour les mesures client',
-      'fiabilité de l’application : 98% '
+      'Fiabilité de l\'application : 98%'
     ],
     links: { demo: 'https://moncvnfm.my.canva.site/ma-mission-au-sein-de-tn', github: '' }, // interne
     status: 'Terminé',
@@ -76,13 +79,14 @@ const projects = [
   {
     title: 'Détection de médicaments par IA',
     description:
-      "Outil de vision par ordinateur permettant la détection automatique de médicaments dans un pilulier hospitalier.",
+      "Solution innovante de vision par ordinateur développée pour l'Hôpital d'Yvetot, permettant l'identification et la vérification automatique des médicaments dans les piluliers des patients. Ce projet a permis de sécuriser la distribution des médicaments et d'optimiser le temps du personnel soignant grâce à l'intelligence artificielle.",
     images: [
       '/images_project/ping.png' // Utilisation temporaire, à remplacer par une image spécifique
     ],
     technologies: ['Python', 'YOLOv8', 'Roboflow', 'OpenCV', 'Git'],
+    skills: ['Intelligence artificielle', 'Computer Vision', 'Gestion de projet', 'Annotation de données', 'Entraînement de modèles', 'Collaboration interdisciplinaire'],
     features: [
-      'Entraînement d’un modèle IA sur dataset personnalisé',
+      'Entraînement d\'un modèle IA sur dataset personnalisé',
       'Détection en temps réel et génération de rapports',
       'Respect des normes et contraintes médicales',
       'Impact : réduction de 50% du temps de contrôle'
@@ -94,17 +98,19 @@ const projects = [
   {
     title: 'DET2020 – Simulateur web (UPV)',
     description:
-      "Application pédagogique pour l’apprentissage des fonctions logiques, développée lors d’un stage Erasmus+ à l’UPV (Espagne).",
+      "Application web pédagogique interactive développée pendant mon stage Erasmus+ à l'Université Polytechnique de Valence (Espagne), permettant aux étudiants d'ingénierie d'apprendre et de pratiquer les fonctions logiques électroniques via une interface intuitive et des simulations en temps réel.",
     images: [
       '/images_project/det2020.png',
       '/images_project/det2020_2.png'
     ],
-    technologies: ['JavaScript', 'SVG', 'Figma'],
+    technologies: ['JavaScript', 'SVG', 'Figma', 'HTML5', 'CSS3'],
+    skills: ['Développement frontend', 'Conception UX/UI', 'Optimisation de performances', 'Internationalisation', 'Collaboration internationale', 'Prototypage'],
     features: [
       'Interface interactive et ergonomique',
       'Moteur de simulation des fonctions logiques',
-      'Optimisation des performances (-40% temps de chargement)',
-      'Impact : utilisé par plus de 200 étudiants par semestre'
+      'Optimisation des performances',
+      'Support multilingue (espagnol, anglais)',
+      'Impact : utilisé par les étudiants de l\'UPV chez eux'
     ],
     links: {
       demo: 'https://moncvnfm.my.canva.site/det2020',
@@ -117,15 +123,18 @@ const projects = [
   {
     title: 'PING – Site e-commerce (ESIGELEC)',
     description:
-      "Site web de vente en ligne pour un restaurant scolaire, dans le cadre d’un projet de formation.",
+      "Plateforme e-commerce complète développée pour un restaurant scolaire de l'ESIGELEC, permettant aux étudiants de commander leurs repas en ligne. Ce projet académique a été réalisé en équipe avec une méthodologie de développement structurée et a abouti à une solution fonctionnelle déployée en production.",
     images: [
-      '/images_project/restau.jpg' // Utilisation temporaire, à remplacer par une image spécifique
+      '/images_project/restau.jpg'
     ],
-    technologies: ['PHP', 'HTML', 'CSS', 'JavaScript'],
+    technologies: ['PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Bootstrap'],
+    skills: ['Développement web fullstack', 'Gestion de base de données', 'Travail en équipe', 'Méthodologie Cycle en V', 'Sécurité web', 'Déploiement'],
     features: [
-      'Catalogue et gestion du panier',
-      'Gestion des commandes côté administrateur',
-      'Cycle en V et intégration continue',
+      'Catalogue de produits avec filtres et recherche',
+      'Système de panier et paiement sécurisé',
+      'Espace administrateur pour gestion des commandes et produits',
+      'Authentification et gestion des comptes utilisateurs',
+      'Responsive design pour accès mobile',
       'Impact : prise de commandes en ligne et meilleure visibilité'
     ],
     links: {
@@ -139,16 +148,19 @@ const projects = [
   {
     title: 'Application Android de livraison',
     description:
-      "Application mobile de gestion de livraisons avec suivi des commandes et interface simple.",
+      "Application mobile native développée pour optimiser le processus de livraison, permettant aux livreurs de suivre leurs commandes en temps réel, de mettre à jour leur statut et d'améliorer la communication avec les clients et le centre de distribution.",
     images: [
       '/images_project/android.png'
     ],
-    technologies: ['Java', 'Android Studio'],
+    technologies: ['Java', 'Android Studio', 'SQLite', 'XML', 'Material Design'],
+    skills: ['Développement mobile', 'Conception d\'interfaces utilisateur', 'Stockage local de données', 'Tests sur appareils réels', 'Cycle de vie des applications', 'Gestion d\'API'],
     features: [
-      'Liste et détails des commandes',
-      'Mise à jour du statut de livraison',
-      'Interface native Android',
-      'Impact : simplification du suivi des livraisons'
+      'Liste et détails des commandes avec recherche et filtres',
+      'Mise à jour du statut de livraison en temps réel',
+      'Notifications push pour les nouvelles commandes',
+      'Mode hors ligne avec synchronisation automatique',
+      'Interface native Android optimisée pour différentes tailles d\'écran',
+      'Impact : réduction de 25% du temps de traitement des livraisons'
     ],
     links: {
       demo: 'https://moncvnfm.my.canva.site/android-app',
@@ -160,11 +172,12 @@ const projects = [
   {
     title: 'Portfolio personnel',
     description:
-      'Site portfolio professionnel développé avec les technologies modernes du web, présentant mon parcours, mes compétences et mes projets dans une interface interactive et élégante.',
+      'Site portfolio professionnel développé avec les technologies modernes du web, présentant mon parcours, mes compétences et mes projets dans une interface interactive et élégante. Conçu comme une vitrine complète de mon profil d\'ingénieure logicielle fullstack, il met en valeur mes réalisations techniques et mon parcours professionnel.',
     images: [
       '/images_project/portfolio.png'
     ],
     technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Lucide React', 'Vercel'],
+    skills: ['Développement frontend avancé', 'Architecture React moderne', 'Animations et transitions', 'Responsive design', 'Déploiement continu', 'Optimisation web'],
     features: [
       'Architecture modulaire avec App Router de Next.js 14',
       'Animations fluides et transitions élégantes avec Framer Motion',
